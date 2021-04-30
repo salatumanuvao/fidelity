@@ -1,0 +1,180 @@
+@mixin flex-config($justify-content: false, $flex: false, $flex-direction: false, $align-items: false) {
+    display: flex;
+    
+    @if $justify-content != false {
+      justify-content: $justify-content;
+    }
+    
+    @if $flex != false {
+      flex: $flex;
+    }
+    
+    @if $flex-direction != false {
+      flex-direction: $flex-direction;
+    }
+    
+    @if $align-items != false {
+      align-items: $align-items;
+    }
+  }
+
+
+  /* HEADER NAV LINKS */
+
+.linkz-wrapper > .navv-link {
+    width: 70px;
+    text-align: center;
+}
+
+.linkz-wrapper > .navv-link a {
+    color:#e8b864;
+}
+
+.linkz-wrapper {
+    @include flex-config($align-items: center, $justify-content: space-between);
+}
+
+.linkz-wrapper > .navv-link {
+    width: 70px;
+    text-align: center;
+}
+
+.linkz-wrapper > .navv-link a {
+    font-family: 'Montserrat', sans-serif;
+    color: #e8b864;
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+.linkz-wrapper > .navv-link a:hover {
+    color: #690203;
+    letter-spacing: 2px;
+}
+
+/* CONTACT SHIT */
+
+.contact-grid-wrapper {
+    width: 1000px;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-gap: 100px;
+}
+
+.company-metadata-sidebar-wrapper > .logo img {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.company-metadata-sidebar-wrapper > .company-details-wrapper {
+    font-family: 'Roboto Slab', serif;
+    font-weight: 900;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: right;
+    font-size: 1.25em;
+}
+
+.company-metadata-sidebar-wrapper > .company-details-wrapper i {
+    color: #690203;
+}
+
+/* FORM SHIT */
+
+.form > .form-group {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.form input {
+    font-size: 1.5em;
+    font-family: inherit;
+    color: inherit;
+    padding: 1.5rem 2rem;
+    border-radius: 2px;
+    border: none;
+    border-bottom: 3px solid black;
+    width: 100%;
+    display: block;
+    transition: all 0.3s;
+}
+
+.form input:focus {
+    outline: none;
+    box-shadow: 0 1rem 2rem rgba(0,0,0,0.1);
+    border-bottom: 3px solid #e8b864;
+}
+
+.form textarea {
+    margin-top: 20px;
+    width: 100%;
+    height: 250px;
+    border-radius: 3px;
+    border: 3px solid black;
+    font-size: 1.5rem;
+    font-family: inherit;
+    color: inherit;
+    padding: 1.5rem;
+    transition: all 0.3s;
+}
+
+.form input:focus, .form textarea:focus {
+    outline: none;
+    box-shadow: 0 1rem 2rem rgba(0,0,0,0.1);
+    border-bottom: 3px solid #e8b864;
+}
+
+.form label {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-left: 2rem;
+    margin-top: 0.7rem;
+    display: block;
+    transition: all 0.3s;
+    color: #e8b864;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.form textarea:focus {
+    outline: none;
+    box-shadow: 0 1rem 2rem rgba(0,0,0,0.1);
+    border: 3px solid #e8b864;
+}
+
+.form input::-webkit-input-placeholder, .form textarea::-webkit-input-placeholder {
+    color: black;
+}
+
+.form input:focus + label, .form textarea:focus + label {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(1rem);
+}
+
+.form input:focus::-webkit-input-placeholder, .form textarea:focus::-webkit-input-placeholder {
+    color: transparent;
+}
+
+/* BUTTON SHIT */
+
+.btn {
+    background-color: #e8b864;
+    color: black;
+    font-size: 1.25em;
+    padding: 10px 25px;
+    border: 1px solid #e8b864;
+    border-radius: 2px;
+    outline: none;
+    transition: all 0.3s;
+}
+
+.centered-btn-wrapper {
+    @include flex-config($justify-content: center);
+}
+
+.btn:active {
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.4);
+}

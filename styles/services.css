@@ -1,0 +1,39 @@
+.link-wrapper > .navi-link {
+  width: 70px;
+  text-align: center;
+}
+
+.link-wrapper > .navi-link a {
+  color: #555050;
+}
+
+.link-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.link-wrapper > .navi-link {
+  width: 70px;
+  text-align: center;
+}
+
+.link-wrapper > .navi-link a {
+  font-family: 'Montserrat', sans-serif;
+  color: lightgrey;
+  text-decoration: none;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.link-wrapper > .navi-link a:hover {
+  color: #555050;
+  letter-spacing: 2px;
+}
+/*# sourceMappingURL=services.css.map */

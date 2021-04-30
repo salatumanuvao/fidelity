@@ -1,0 +1,118 @@
+@mixin flex-config($justify-content: false, $flex: false, $flex-direction: false, $align-items: false) {
+    display: flex;
+    
+    @if $justify-content != false {
+      justify-content: $justify-content;
+    }
+    
+    @if $flex != false {
+      flex: $flex;
+    }
+    
+    @if $flex-direction != false {
+      flex-direction: $flex-direction;
+    }
+    
+    @if $align-items != false {
+      align-items: $align-items;
+    }
+  }
+
+
+  .skewed-header {
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+}
+
+.skewed-header > .header-bg {
+    position: absolute;
+    top: 0;
+    bottom: 0; 
+    right: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    transform: skewY(-6deg);
+    transform-origin: top left;
+    filter: brightness(50%)
+}
+
+.skewed-header > .skewed-header-wrapper {
+    position: absolute;
+    @include flex-config($justify-content: center);
+    width: 100vw;
+}
+
+.skewed-header > .skewed-header-wrapper > .skewed-header-content {
+    width: 1000px;
+    @include flex-config($justify-content: space-between, $align-items: center);
+}
+
+.skewed-header > .skewed-header-wrapper > .skewed-header-content > .heading-wrapper {
+    background-color: #e8b864;
+    color: black;
+    width: 175px;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Page container styles */
+.page-container {
+    @include flex-config($justify-content: center);
+}
+
+.page-container > .content-wrapper {
+    width: 1000px;
+}
+
+.page-container > .content-wrapper > #Steve {
+    width: 350px;
+    margin: 25px;
+    float: left;
+    border: 1px transparent white;
+}
+
+.page-container > .content-wrapper p {
+    letter-spacing: 1px;
+    line-height: 30px;
+}
+
+/* Squares grid styles */
+.squares-wrapper {
+    @include flex-config($justify-content: center);
+}
+
+.squares-wrapper > .squares {
+    width: 1000px;
+}
+
+.squares-wrapper > .squares > .square {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.square > .img-wrapper img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+
+.squares-wrapper > .squares > .square {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: -4px;
+}
+
+.square > .square-text-wrapper {
+    @include flex-config($justify-content: center, $align-items: center, $flex-direction: column);
+    padding: 42px;
+}
+
+.square > .square-text-wrapper h1 {
+    color: #e8b864;
+}

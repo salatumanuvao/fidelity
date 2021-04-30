@@ -1,0 +1,49 @@
+@mixin flex-config($justify-content: false, $flex: false, $flex-direction: false, $align-items: false) {
+    display: flex;
+    
+    @if $justify-content != false {
+      justify-content: $justify-content;
+    }
+    
+    @if $flex != false {
+      flex: $flex;
+    }
+    
+    @if $flex-direction != false {
+      flex-direction: $flex-direction;
+    }
+    
+    @if $align-items != false {
+      align-items: $align-items;
+    }
+  }
+
+.link-wrapper > .navi-link {
+    width: 70px;
+    text-align: center;
+}
+
+.link-wrapper > .navi-link a {
+    color:#e8b864;
+}
+
+.link-wrapper {
+    @include flex-config($justify-content: space-between, $align-items: center);
+}
+
+.link-wrapper > .navi-link {
+    width: 70px;
+    text-align: center;
+}
+
+.link-wrapper > .navi-link a {
+    font-family: 'Montserrat', sans-serif;
+    color: #e8b864;
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+.link-wrapper > .navi-link a:hover {
+    color: #690203;
+    letter-spacing: 2px;
+}
